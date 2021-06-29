@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="au.com.soan.androidnavigation.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_alertFragment"
+            app:destination="@id/alertFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="false"
+            app:launchSingleTop="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/alertFragment"
+        android:name="au.com.soan.androidnavigation.ui.main.AlertFragment"
+        android:label="alert_fragment"
+        tools:layout="@layout/alert_fragment" />
+    <dialog
+        android:id="@+id/helpFragment"
+        android:name="au.com.soan.androidnavigation.ui.main.HelpFragment"
+        android:label="help_fragment"
+        tools:layout="@layout/help_fragment" />
+    <action
+        android:id="@+id/action_global_helpFragment"
+        app:destination="@id/helpFragment"
+        app:launchSingleTop="true" />
+</navigation>
